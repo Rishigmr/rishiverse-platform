@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rishiverse</title>
+
+<style>
+*{box-sizing:border-box;font-family:Arial;}
+body{
+  margin:0;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+  min-height:100vh;
+}
+
+/* LOGIN */
+#login{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.login-box{
+  background:#111;
+  padding:25px;
+  width:90%;
+  max-width:350px;
+  border-radius:15px;
+  box-shadow:0 0 25px black;
+  text-align:center;
+}
+.login-box h2{margin-bottom:15px;}
+.login-box input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:none;
+  border-radius:8px;
+}
+.login-box button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#ff9800;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* DASHBOARD */
+#dashboard{display:none;}
+header{
+  padding:15px;
+  text-align:center;
+  background:#111;
+  font-size:22px;
+}
+.games{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  padding:15px;
+}
+.card{
+  background:#1e1e1e;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+.card:hover{
+  transform:scale(1.05);
+  background:#333;
+}
+.card img{
+  width:80px;
+  height:80px;
+}
+footer{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  background:#111;
+  padding:10px 0;
+}
+footer div{cursor:pointer;}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="login-box">
+    <h2>🎮 Rishiverse</h2>
+    <input id="name" placeholder="Enter username">
+    <button onclick="login()">Login</button>
+    <p style="font-size:12px;">Demo login</p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+  <header>Welcome to Rishiverse</header>
+
+  <div class="games">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png">
+      <p>Car Racing</p>
+      <small>Coming Soon</small>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png">
+      <p>Lucky Spin</p>
+      <small>Coming Soon</small>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3405/3405803.png">
+      <p>Trading</p>
+      <small>Coming Soon</small>
+    </div>
+  </div>
+
+  <footer>
+    <div>🏠 Home</div>
+    <div>👥 Friends</div>
+    <div>⚙ Settings</div>
+    <div>❓ Help</div>
+  </footer>
+</div>
+
+<script>
+function login(){
+  let n=document.getElementById("name").value;
+  if(n===""){alert("Enter username");return;}
+  document.getElementById("login").style.display="none";
+  document.getElementById("dashboard").style.display="block";
+}
+</script>
+
+</body>
+</html>
